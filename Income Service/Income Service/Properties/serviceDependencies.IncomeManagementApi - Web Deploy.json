@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/incomeservicedbserver/databases/Income Service_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:income"
+    },
+    "apis1": {
+      "apiEndpoint": "https://financeappincomeserviceapi.azure-api.net/",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/FinanceAppIncomeServiceApi/apis/IncomeService",
+      "type": "apis.azure"
+    }
+  }
+}

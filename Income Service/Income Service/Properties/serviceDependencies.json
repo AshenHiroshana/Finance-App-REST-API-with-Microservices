@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:income"
+    },
+    "apis1": {
+      "type": "apis"
+    }
+  }
+}

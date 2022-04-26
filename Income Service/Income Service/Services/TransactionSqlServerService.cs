@@ -37,7 +37,7 @@ namespace Income_Service.Services
 
         public void DeleteTransaction(Transaction transaction)
         {
-             _context1.Remove(transaction);
+            _context1.Remove(transaction);
             _context1.SaveChanges();
         }
     }

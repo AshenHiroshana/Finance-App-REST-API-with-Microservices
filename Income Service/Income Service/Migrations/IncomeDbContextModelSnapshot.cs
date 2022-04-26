@@ -100,7 +100,7 @@ namespace Income_Service.Migrations
                             Id = 1,
                             Amount = 100.0,
                             CatagoryId = 1,
-                            Date = new DateTime(2022, 4, 26, 15, 39, 17, 728, DateTimeKind.Local).AddTicks(3709),
+                            Date = new DateTime(2022, 4, 26, 18, 42, 21, 89, DateTimeKind.Local).AddTicks(3082),
                             Description = "a"
                         },
                         new
@@ -108,7 +108,7 @@ namespace Income_Service.Migrations
                             Id = 2,
                             Amount = 100.0,
                             CatagoryId = 2,
-                            Date = new DateTime(2022, 4, 26, 15, 39, 17, 728, DateTimeKind.Local).AddTicks(3724),
+                            Date = new DateTime(2022, 4, 26, 18, 42, 21, 89, DateTimeKind.Local).AddTicks(3093),
                             Description = "a"
                         });
                 });
