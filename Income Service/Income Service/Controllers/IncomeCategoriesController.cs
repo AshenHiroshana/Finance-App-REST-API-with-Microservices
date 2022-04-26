@@ -7,12 +7,12 @@ namespace Income_Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class IncomeCategoriesController : ControllerBase
     {
 
         private readonly ICatagoryRepository _catagoryRepository;
 
-        public CategoriesController(ICatagoryRepository repository)
+        public IncomeCategoriesController(ICatagoryRepository repository)
         {
             _catagoryRepository = repository;
         }
@@ -33,6 +33,24 @@ namespace Income_Service.Controllers
                 return NotFound("Catagory Not Found");
             }
             return Ok(catagory); ;
+        }
+
+        [HttpGet("Name/{name}")]
+        public IActionResult GetCatagoryByName(string name)
+        {
+            var catagory = _catagoryRepository.GetCatagoryByName(name);
+            if (catagory == null)
+            {
+                return NotFound("Catagory Not Found");
+            }
+            return Ok(catagory); ;
+        }
+
+        [HttpPost]
+        public IActionResult AddCatagory(Catagory catagory)
+        {
+            var newCatagory = _catagoryRepository.AddCatagory(catagory);
+            return Ok(newCatagory); ;
         }
 
     }

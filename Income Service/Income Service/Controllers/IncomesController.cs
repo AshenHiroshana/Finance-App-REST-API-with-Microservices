@@ -20,19 +20,55 @@ namespace Income_Service.Controllers
         [HttpGet]
         public ActionResult<ICollection<Transaction>> GetTransactions()
         {
-            var categories = _transactionRepository.GetAllTransactions();
-            return Ok(categories);
+            var transactions = _transactionRepository.GetAllTransactions();
+            return Ok(transactions);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetTransaction(int id)
         {
-            var catagory = _transactionRepository.GetTransaction(id);
-            if (catagory == null)
+            var transaction = _transactionRepository.GetTransaction(id);
+            if (transaction == null)
             {
-                return NotFound("Catagory Not Found");
+                return NotFound("Transaction Not Found");
             }
-            return Ok(catagory); ;
+            return Ok(transaction); ;
+        }
+
+        [HttpPost]
+        public IActionResult AddTransaction(Transaction transaction)
+        {
+            var newTransaction = _transactionRepository.AddTransaction(transaction);
+            return Ok(newTransaction); ;
+        }
+
+        [HttpPut]
+        public IActionResult UpdateTransaction(Transaction transaction)
+        {
+            
+            if (_transactionRepository.GetTransaction((int)transaction.Id) == null)
+            {
+                return NotFound("Transaction Not Found");
+            }
+
+            var newTransaction = _transactionRepository.UpdateTransaction(transaction);
+            return Ok(newTransaction);
+
+
+        }
+
+
+        [HttpDelete("{id}")]
+        public IActionResult AddTransaction(int id)
+        {
+            Transaction transaction = _transactionRepository.GetTransaction(id);
+            if (transaction == null)
+            {
+                return NotFound("Transaction Not Found");
+            }
+
+            _transactionRepository.DeleteTransaction(transaction);
+            return Ok("Transaction Successfully Deleted");
         }
 
     }

@@ -4,6 +4,7 @@ using Income_Service.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Income_Service.Migrations
 {
     [DbContext(typeof(IncomeDbContext))]
-    partial class IncomeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220426093838_5")]
+    partial class _5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,13 +33,11 @@ namespace Income_Service.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Icon")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -76,19 +76,16 @@ namespace Income_Service.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
 
                     b.Property<double?>("Amount")
-                        .IsRequired()
                         .HasColumnType("float");
 
                     b.Property<int>("CatagoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Date")
-                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -100,7 +97,7 @@ namespace Income_Service.Migrations
                             Id = 1,
                             Amount = 100.0,
                             CatagoryId = 1,
-                            Date = new DateTime(2022, 4, 26, 15, 39, 17, 728, DateTimeKind.Local).AddTicks(3709),
+                            Date = new DateTime(2022, 4, 26, 15, 8, 38, 458, DateTimeKind.Local).AddTicks(5701),
                             Description = "a"
                         },
                         new
@@ -108,7 +105,7 @@ namespace Income_Service.Migrations
                             Id = 2,
                             Amount = 100.0,
                             CatagoryId = 2,
-                            Date = new DateTime(2022, 4, 26, 15, 39, 17, 728, DateTimeKind.Local).AddTicks(3724),
+                            Date = new DateTime(2022, 4, 26, 15, 8, 38, 458, DateTimeKind.Local).AddTicks(5715),
                             Description = "a"
                         });
                 });

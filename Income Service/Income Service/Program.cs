@@ -15,6 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICatagoryRepository, CatagorySqlServerService>();
 builder.Services.AddScoped<ITransactionRepository, TransactionSqlServerService>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

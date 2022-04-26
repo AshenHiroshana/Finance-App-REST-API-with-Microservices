@@ -24,12 +24,12 @@ namespace Income_Service.DataAccess
             });
 
             modelBuilder.Entity<Transaction>().HasData(new Transaction[]
-           {
+            {
                 new Transaction { Id = 1, Amount = 100, Description = "a", Date = DateTime.Now, CatagoryId = 1},
                 new Transaction { Id = 2, Amount = 100, Description = "a", Date = DateTime.Now, CatagoryId = 2}
-           });
+            });
 
-            modelBuilder.Entity<Transaction>();
+            modelBuilder.Entity<Catagory>().HasIndex(c => c.Name).IsUnique();
 
         }
 

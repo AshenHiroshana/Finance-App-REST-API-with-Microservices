@@ -4,6 +4,7 @@ using Income_Service.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Income_Service.Migrations
 {
     [DbContext(typeof(IncomeDbContext))]
-    partial class IncomeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220426084026_3")]
+    partial class _3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,25 +26,19 @@ namespace Income_Service.Migrations
 
             modelBuilder.Entity("Finance_App.Entity.Catagory", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
 
                     b.Property<string>("Icon")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Name")
-                        .IsUnique();
 
                     b.ToTable("Catagories");
 
@@ -76,21 +72,20 @@ namespace Income_Service.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
 
                     b.Property<double?>("Amount")
-                        .IsRequired()
                         .HasColumnType("float");
 
                     b.Property<int>("CatagoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Date")
-                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CatagoryId");
 
                     b.ToTable("Transactions");
 
@@ -100,7 +95,7 @@ namespace Income_Service.Migrations
                             Id = 1,
                             Amount = 100.0,
                             CatagoryId = 1,
-                            Date = new DateTime(2022, 4, 26, 15, 39, 17, 728, DateTimeKind.Local).AddTicks(3709),
+                            Date = new DateTime(2022, 4, 26, 14, 10, 26, 45, DateTimeKind.Local).AddTicks(8821),
                             Description = "a"
                         },
                         new
@@ -108,9 +103,25 @@ namespace Income_Service.Migrations
                             Id = 2,
                             Amount = 100.0,
                             CatagoryId = 2,
-                            Date = new DateTime(2022, 4, 26, 15, 39, 17, 728, DateTimeKind.Local).AddTicks(3724),
+                            Date = new DateTime(2022, 4, 26, 14, 10, 26, 45, DateTimeKind.Local).AddTicks(8836),
                             Description = "a"
                         });
+                });
+
+            modelBuilder.Entity("Finance_App.Entity.Transaction", b =>
+                {
+                    b.HasOne("Finance_App.Entity.Catagory", "Catagory")
+                        .WithMany("Transactions")
+                        .HasForeignKey("CatagoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Catagory");
+                });
+
+            modelBuilder.Entity("Finance_App.Entity.Catagory", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 #pragma warning restore 612, 618
         }

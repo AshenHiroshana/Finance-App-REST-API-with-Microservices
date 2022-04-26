@@ -6,5 +6,9 @@ namespace Income_Service.Services
     {
         public List<Transaction> GetAllTransactions();
         public Transaction GetTransaction(int id);
+        public Transaction AddTransaction(Transaction transaction);
+        public Transaction UpdateTransaction(Transaction transaction);
+        public void DeleteTransaction(Transaction transaction);
+
     }
 }
