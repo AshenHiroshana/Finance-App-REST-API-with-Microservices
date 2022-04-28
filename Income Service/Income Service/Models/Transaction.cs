@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Finance_App.Entity
+namespace Income_Service.Models
 {
     public class Transaction
     {

@@ -1,4 +1,4 @@
-﻿using Finance_App.Entity;
+﻿using Income_Service.Models;
 
 namespace Income_Service.Services
 {

@@ -1,4 +1,4 @@
-﻿using Finance_App.Entity;
+﻿using Income_Service.Models;
 using Income_Service.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

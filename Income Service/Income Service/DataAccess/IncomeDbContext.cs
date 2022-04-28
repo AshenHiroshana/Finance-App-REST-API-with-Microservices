@@ -1,4 +1,4 @@
-﻿using Finance_App.Entity;
+﻿using Income_Service.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Income_Service.DataAccess
