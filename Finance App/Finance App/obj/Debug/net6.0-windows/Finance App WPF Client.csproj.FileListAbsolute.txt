@@ -1,0 +1,34 @@
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App WPF Client.exe
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App WPF Client.deps.json
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App WPF Client.runtimeconfig.json
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App WPF Client.dll
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\ref\Finance App WPF Client.dll
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App WPF Client.pdb
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\LiveCharts.dll
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.csproj.AssemblyReference.cache
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Resource\Styles\OutlinedButton.baml
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\ExpenseView.g.cs
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\HomeView.g.cs
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\IncomeView.g.cs
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\PredictionView.g.cs
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client_MarkupCompile.cache
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client_MarkupCompile.lref
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\App.baml
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\ExpenseView.baml
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\HomeView.baml
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\IncomeView.baml
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\PredictionView.baml
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.g.resources
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.AssemblyInfoInputs.cache
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.AssemblyInfo.cs
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.csproj.CoreCompileInputs.cache
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.csproj.CopyComplete
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.dll
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\ref\Finance App WPF Client.dll
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.pdb
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.genruntimeconfig.cache

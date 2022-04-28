@@ -1,0 +1,69 @@
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.exe
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.deps.json
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.runtimeconfig.json
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.dll
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\ref\Finance App.dll
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.pdb
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\LiveCharts.dll
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\HomeView.g.cs
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\IncomeView.g.cs
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App_MarkupCompile.cache
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App_MarkupCompile.lref
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\App.baml
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\HomeView.baml
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\IncomeView.baml
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.g.resources
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.AssemblyInfoInputs.cache
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.AssemblyInfo.cs
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.csproj.CoreCompileInputs.cache
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.csproj.CopyComplete
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.dll
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\ref\Finance App.dll
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.pdb
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.genruntimeconfig.cache
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.csproj.AssemblyReference.cache
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\ExpenseView.g.cs
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\ExpenseView.baml
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\PredictionView.g.cs
+C:\Users\Ashen\source\repos\Finance-App-Material-UI\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\PredictionView.baml
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.exe
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.deps.json
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.runtimeconfig.json
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.dll
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\ref\Finance App.dll
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App.pdb
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\LiveCharts.dll
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\ExpenseView.g.cs
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\HomeView.g.cs
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\IncomeView.g.cs
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\PredictionView.g.cs
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App_MarkupCompile.cache
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App_MarkupCompile.lref
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\App.baml
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\ExpenseView.baml
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\HomeView.baml
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\IncomeView.baml
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\View\PredictionView.baml
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.g.resources
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.AssemblyInfoInputs.cache
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.AssemblyInfo.cs
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.csproj.CoreCompileInputs.cache
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.csproj.CopyComplete
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.dll
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\ref\Finance App.dll
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.pdb
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.genruntimeconfig.cache
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Resource\Styles\OutlinedButton.baml
+C:\Users\Ashen\source\repos\Finance-App-2\WpfApp1\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App.csproj.AssemblyReference.cache

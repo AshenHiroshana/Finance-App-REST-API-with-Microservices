@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "717ef266-a3ce-4809-808e-4b32f967bed6": {
+      "ProjectGuid": "717ef266-a3ce-4809-808e-4b32f967bed6",
+      "DisplayName": "Finance App",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "f4613f7e-9765-410c-81e8-2ea599d9dd68": {
+      "ProjectGuid": "f4613f7e-9765-410c-81e8-2ea599d9dd68",
+      "DisplayName": "personal financial management app class libbey",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
