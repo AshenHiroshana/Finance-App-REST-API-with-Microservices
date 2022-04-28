@@ -11,7 +11,7 @@ namespace Income_Service.DataAccess
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //var connectionString = "Server=DESKTOP-150BK28; Database=Income; User Id=root; Password=1234";
-            var connectionString = "Server=tcp:incomeservicedbserver.database.windows.net,1433;Initial Catalog=Income Service_db;Persist Security Info=False;User ID=Ashen;Password=Earth1234@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            var connectionString = "Server=tcp:incomeservicedbserver.database.windows.net,1433;Initial Catalog=IncomeService_db;Persist Security Info=False;User ID=Ashen;Password=Earth1234@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             optionsBuilder.UseSqlServer(connectionString);
         }
 

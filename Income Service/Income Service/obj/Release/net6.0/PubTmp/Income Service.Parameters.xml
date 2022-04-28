@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="IncomeManagementApi" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="IncomeService" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Ashen\\source\\repos\\Finance\ App\ REST\ API\ with\ Microservices\\Income\ Service\\Income\ Service\\obj\\Release\\net6\.0\\PubTmp\\Out\\$" />
-  </parameter>
-  <parameter name="Income_Service.DataAccess.IncomeDbContext" description="" value="Data Source=tcp:incomeservicedbserver.database.windows.net,1433;Initial Catalog=Income Service_db;User Id=Ashen@incomeservicedbserver;Password=Earth1234@" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Ashen\\source\\repos\\Finance\ App\ REST\ API\ with\ Microservices\\Income\ Service\\Income\ Service\\obj\\Release\\net6\.0\\PubTmp\\EFSQLScripts\\Income_Service\.DataAccess\.IncomeDbContext\.sql$" />
   </parameter>
 </parameters>

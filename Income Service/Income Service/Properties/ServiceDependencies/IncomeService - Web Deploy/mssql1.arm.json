@@ -4,7 +4,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "IncomeRG_API",
+      "defaultValue": "IncomeService_ResourceGroup",
       "metadata": {
         "_parameterType": "resourceGroup",
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
@@ -36,7 +36,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('Income Service_db', subscription().subscriptionId)))]",
+      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('IncomeService_db', subscription().subscriptionId)))]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "apiVersion": "2019-10-01",
       "dependsOn": [
@@ -63,7 +63,7 @@
               },
               "kind": "v12.0,user",
               "location": "[parameters('resourceLocation')]",
-              "name": "incomeservicedbserver/Income Service_db",
+              "name": "incomeservicedbserver/IncomeService_db",
               "type": "Microsoft.Sql/servers/databases",
               "apiVersion": "2017-10-01-preview",
               "dependsOn": [
