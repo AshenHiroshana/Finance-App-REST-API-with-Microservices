@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/ExpenseCategories": {
+    "/api/Categories": {
       "get": {
         "tags": [
-          "ExpenseCategories"
+          "Categories"
         ],
         "produces": [
           "text/plain",
@@ -29,7 +29,7 @@
       },
       "post": {
         "tags": [
-          "ExpenseCategories"
+          "Categories"
         ],
         "consumes": [
           "application/json",
@@ -52,10 +52,10 @@
         }
       }
     },
-    "/api/ExpenseCategories/{id}": {
+    "/api/Categories/{id}": {
       "get": {
         "tags": [
-          "ExpenseCategories"
+          "Categories"
         ],
         "parameters": [
           {
@@ -73,10 +73,10 @@
         }
       }
     },
-    "/api/ExpenseCategories/Name/{name}": {
+    "/api/Categories/Name/{name}": {
       "get": {
         "tags": [
-          "ExpenseCategories"
+          "Categories"
         ],
         "parameters": [
           {

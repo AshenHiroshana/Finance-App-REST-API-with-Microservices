@@ -7,12 +7,12 @@ namespace Income_Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class IncomeCategoriesController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
 
         private readonly ICatagoryRepository _catagoryRepository;
 
-        public IncomeCategoriesController(ICatagoryRepository repository)
+        public CategoriesController(ICatagoryRepository repository)
         {
             _catagoryRepository = repository;
         }

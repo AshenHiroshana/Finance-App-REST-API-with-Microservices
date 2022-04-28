@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/IncomeCategories": {
+    "/api/Categories": {
       "get": {
         "tags": [
-          "IncomeCategories"
+          "Categories"
         ],
         "produces": [
           "text/plain",
@@ -29,7 +29,7 @@
       },
       "post": {
         "tags": [
-          "IncomeCategories"
+          "Categories"
         ],
         "consumes": [
           "application/json",
@@ -52,10 +52,10 @@
         }
       }
     },
-    "/api/IncomeCategories/{id}": {
+    "/api/Categories/{id}": {
       "get": {
         "tags": [
-          "IncomeCategories"
+          "Categories"
         ],
         "parameters": [
           {
@@ -73,10 +73,10 @@
         }
       }
     },
-    "/api/IncomeCategories/Name/{name}": {
+    "/api/Categories/Name/{name}": {
       "get": {
         "tags": [
-          "IncomeCategories"
+          "Categories"
         ],
         "parameters": [
           {

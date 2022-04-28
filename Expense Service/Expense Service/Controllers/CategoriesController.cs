@@ -7,12 +7,12 @@ namespace Expense_Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ExpenseCategoriesController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
 
         private readonly ICatagoryRepository _catagoryRepository;
 
-        public ExpenseCategoriesController(ICatagoryRepository repository)
+        public CategoriesController(ICatagoryRepository repository)
         {
             _catagoryRepository = repository;
         }
