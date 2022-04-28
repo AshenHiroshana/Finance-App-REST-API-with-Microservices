@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dhLczGKZi3G5rQRe4uGrvPfQ7aUta/+rZw19HaI2TgDncenXHZRjwcvB7q1ErL+Mk2ZVR/8aDmiWupkdVlpe3g==",
+  "dgSpecHash": "WsI6RwNn81ru0cRZhyXgFy/aNExLu+raVhQd61ibqKSIWD4KhNN29KI02fyzFtiRAWAs5FAJ9vyXGFTnRlp3gg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ashen\\source\\repos\\Finance App REST API with Microservices\\Expense Service\\Expense Service\\Expense Service.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Ashen\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.4\\microsoft.entityframeworkcore.design.6.0.4.nupkg.sha512",
     "C:\\Users\\Ashen\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.4\\microsoft.entityframeworkcore.relational.6.0.4.nupkg.sha512",
     "C:\\Users\\Ashen\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.4\\microsoft.entityframeworkcore.sqlserver.6.0.4.nupkg.sha512",
+    "C:\\Users\\Ashen\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.0\\microsoft.entityframeworkcore.tools.6.0.0.nupkg.sha512",
     "C:\\Users\\Ashen\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Ashen\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Ashen\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",

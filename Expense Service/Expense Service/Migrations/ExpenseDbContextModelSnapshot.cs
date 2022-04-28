@@ -136,7 +136,7 @@ namespace Expense_Service.Migrations
                             Id = 1,
                             Amount = 100.0,
                             CatagoryId = 1,
-                            Date = new DateTime(2022, 4, 28, 8, 5, 16, 398, DateTimeKind.Local).AddTicks(7110),
+                            Date = new DateTime(2022, 4, 28, 9, 3, 55, 728, DateTimeKind.Local).AddTicks(7768),
                             Description = "a"
                         },
                         new
@@ -144,7 +144,7 @@ namespace Expense_Service.Migrations
                             Id = 2,
                             Amount = 100.0,
                             CatagoryId = 2,
-                            Date = new DateTime(2022, 4, 28, 8, 5, 16, 398, DateTimeKind.Local).AddTicks(7127),
+                            Date = new DateTime(2022, 4, 28, 9, 3, 55, 728, DateTimeKind.Local).AddTicks(7779),
                             Description = "a"
                         });
                 });

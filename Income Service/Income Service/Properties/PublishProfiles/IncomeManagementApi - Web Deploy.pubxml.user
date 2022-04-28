@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXWd4ZzJgV0CKOnKy4cSJCQAAAAACAAAAAAAQZgAAAAEAACAAAAAUdZKMR9vawVGCOMaM0RLCIPTVWSt2aLJhPkx5Sp1LxAAAAAAOgAAAAAIAACAAAACakfikDq1KPT0EpKmb6WKvYcHOtU/Vrst6v0KZi4/gKYAAAAAm7L54/tNUQv3kDk+GjFvYMaWGGBUzNlPn9PXuH0Hjpwt/eVSaM+2/Ah7s0xeCUW2q6CG6r0aef/JSXfnKyVuwakvTfQaCPXT5S7pGgQGj40F7NSUWCm8plGZ/keEJbJNahgj9UbqmGhSI+4/wMxNUZp8IQhVUi1DNqSaa0JfjRkAAAAAt14+9mbRlr7GO0P0HOJotJCnpJk9lz4Nm5HJO4l8LVTCzlmYZH6YpTO2qT5N+ls/0uckf76YJQn/aqT51HbS1</EncryptedPassword>
-    <History>True|2022-04-26T13:13:41.5978905Z;True|2022-04-26T18:29:49.6948444+05:30;</History>
+    <History>True|2022-04-28T03:47:35.2555576Z;True|2022-04-28T08:12:05.6252391+05:30;True|2022-04-26T18:43:41.5978905+05:30;True|2022-04-26T18:29:49.6948444+05:30;</History>
   </PropertyGroup>
   <ItemGroup>
     <EFMigrations Include="Income_Service.DataAccess.IncomeDbContext">
