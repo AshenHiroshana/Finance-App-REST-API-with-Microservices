@@ -281,7 +281,7 @@ namespace Finance_App.View
           
         }
 
-        private void AddCatagory(object sender, RoutedEventArgs e)
+        private async void AddCatagory(object sender, RoutedEventArgs e)
         {
 
             if (txtCatagoryname.Text == "")
@@ -291,7 +291,7 @@ namespace Finance_App.View
             if (txtCatagoryname.Text != "")
             {
                 CatagoryController catagoryController = new CatagoryController();
-                List<Catagory> catagories = catagoryController.GetExpenseCatagory();
+                List<Catagory> catagories = await catagoryController.GetExpenseCatagory();
 
                 Boolean isSet = false;
 
@@ -333,7 +333,7 @@ namespace Finance_App.View
 
         }
 
-        private void updateCatagoryList()
+        private async void updateCatagoryList()
         {
 
             CatagoryList.Children.Clear();
@@ -341,7 +341,7 @@ namespace Finance_App.View
 
             CatagoryController catagoryController = new CatagoryController();
 
-            List<Catagory> catagories = catagoryController.GetExpenseCatagory();
+            List<Catagory> catagories = await catagoryController.GetExpenseCatagory();
 
 
 

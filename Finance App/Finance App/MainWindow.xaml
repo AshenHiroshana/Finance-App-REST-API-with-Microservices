@@ -18,7 +18,7 @@
     <Grid>
         <Border Margin="10" CornerRadius="15" Background="#fefefe">
 
-            <Grid>
+            <Grid x:Name="abc">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="120"/>
@@ -175,8 +175,18 @@
                 <ContentControl Content="{Binding}"
                             Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10"
+                            Margin="10,10,10,0" Height="330" VerticalAlignment="Top"
                             />
+                
+                
+                <Image 
+                    x:Name="gif"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="150"
+                    Height="150"
+                    Visibility="Hidden"
+                    Source="/Resource/lo.png" />
 
 
             </Grid>

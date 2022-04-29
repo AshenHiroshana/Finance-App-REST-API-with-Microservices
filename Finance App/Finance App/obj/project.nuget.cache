@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ZEZzMiP+AQTaTruxKaNR0gdWwQriTq4HjG3buQdSmvIlmjFnWfVtQ0CqQLpE93NdnuUkwaFtuDGm5yOGT2chfA==",
+  "dgSpecHash": "/LCnLlzxnX1Fb6ewWr/Q5/LvzOENejUNkJrx3MV/UrIq+MmZVQDHYzmAr9AzF12p83YvTTfg/oWVrUwaM3/h7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ashen\\source\\repos\\Finance App REST API with Microservices\\Finance App\\Finance App\\Finance App WPF Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ashen\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
-    "C:\\Users\\Ashen\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
+    "C:\\Users\\Ashen\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
+    "C:\\Users\\Ashen\\.nuget\\packages\\system.net.http.json\\6.0.0\\system.net.http.json.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ashen\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ashen\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ashen\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
   ],
   "logs": [
     {

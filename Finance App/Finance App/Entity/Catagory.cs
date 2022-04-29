@@ -8,17 +8,10 @@ namespace Finance_App.Entity
 {
     public class Catagory
     {
-        private string? name;
-        private string? icon;
-
-        public string? Name { get; set; }
-        public string? Icon { get; set; }
-
-        public Catagory(string? name, string? icon)
-        {
-            this.name = name;
-            this.icon = icon;
-        }
+       
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Icon { get; set; }
 
         public Catagory()
         {

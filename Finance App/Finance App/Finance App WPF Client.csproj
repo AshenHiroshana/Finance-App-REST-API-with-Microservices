@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <None Remove="Resource\F.png" />
+    <None Remove="Resource\lo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,10 +23,12 @@
 
   <ItemGroup>
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resource\F.png" />
+    <Resource Include="Resource\lo.png" />
   </ItemGroup>
 
 </Project>

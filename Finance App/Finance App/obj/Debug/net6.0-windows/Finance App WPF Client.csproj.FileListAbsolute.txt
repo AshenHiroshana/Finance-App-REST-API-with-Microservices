@@ -6,7 +6,6 @@ C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\Finance App WPF Client.pdb
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\LiveCharts.dll
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
-C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.csproj.AssemblyReference.cache
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Resource\Styles\OutlinedButton.baml
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\View\ExpenseView.g.cs
@@ -32,3 +31,4 @@ C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\ref\Finance App WPF Client.dll
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.pdb
 C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.genruntimeconfig.cache
+C:\Users\Ashen\source\repos\Finance App REST API with Microservices\Finance App\Finance App\obj\Debug\net6.0-windows\Finance App WPF Client.csproj.AssemblyReference.cache

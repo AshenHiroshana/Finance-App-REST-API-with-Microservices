@@ -20,20 +20,28 @@ namespace Finance_App
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    
+
+    
     public partial class MainWindow : Window
     {
+
+        static Image x;
         public MainWindow()
         {
             InitializeComponent();
             PreData preData = new PreData();
+            x = gif;
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
             string menuItem = lbi.Name.ToString();
+            
 
-            if(menuItem == "Home")
+            if (menuItem == "Home")
                 DataContext = new HomeView();
             if (menuItem == "Income")
                 DataContext = new IncomeView();
@@ -153,7 +161,7 @@ namespace Finance_App
             Common.selectedDate = (DateTime)datePicker.GetValue(DatePicker.SelectedDateProperty);
             ListBox listBox = (ListBox)menuList;
             ListBoxItem selectedMenuItem = (ListBoxItem)listBox.SelectedItem;
-
+            
             string menuItem = selectedMenuItem.Name.ToString();
             if (menuItem == "Home")
                 DataContext = new HomeView();
@@ -165,6 +173,24 @@ namespace Finance_App
                 DataContext = new PredictionView();
 
         }
+
+
+       
+
+
+        public static void ShowLoading(Boolean show)
+        {
+            if (show)
+            {
+                x.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                x.Visibility = Visibility.Hidden;
+            }
+        }
+
+     
 
         
     }

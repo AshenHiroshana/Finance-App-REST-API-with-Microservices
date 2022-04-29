@@ -1,8 +1,12 @@
 ﻿using Finance_App.Entity;
+using Finance_App.Resource;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -10,95 +14,70 @@ using System.Windows;
 
 namespace Finance_App.Controller
 {
+    
     public class CatagoryController
     {
 
-        
+        ApiConfig apiConfig = new ApiConfig();
 
-        public void SaveIncomeCatagory(Catagory catagory)
+        public async Task SaveIncomeCatagory(Catagory catagory)
         {
 
-            //List<Catagory> catagories = GetIncomeCatagory();
-            PreData.incomeCatagories.Add(catagory);
- 
+            
+            HttpResponseMessage responseMessage = await apiConfig.PodtAsync("Income/api/Categories",catagory);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                //return catagories; //Error 
+            }
 
         }
 
-        public List<Catagory> GetIncomeCatagory()
+        public async Task<List<Catagory>> GetIncomeCatagory()
         {
+   
+            List<Catagory> catagories = new List<Catagory>();
 
-            try
+            HttpResponseMessage responseMessage = await apiConfig.GetAsync("Income/api/Categories");
+           
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                if (PreData.incomeCatagories == null)
-                {
-                    StreamReader reader = new StreamReader("C:/Users/Ashen/Desktop/OriginalIncomeCatagoryList.txt");
-                    String json = reader.ReadToEnd();
-                    reader.Close();
-
-                    PreData.incomeCatagories = JsonSerializer.Deserialize<List<Catagory>>(json)!;
-                   
-
-                    return PreData.incomeCatagories;
-                }
-                else
-                {
-                    
-                    return PreData.incomeCatagories;
-
-
-                }
+                return catagories; //Error 
             }
-            catch (Exception ex2)
-            {
-                
-                PreData.incomeCatagories = new List<Catagory>();
-                return PreData.incomeCatagories;
 
-
-            }
+            catagories = await responseMessage.Content.ReadFromJsonAsync<List<Catagory>>();
+            return catagories;
 
         }
 
 
 
-        public void SaveExpenseCatagory(Catagory catagory)
+        public async void SaveExpenseCatagory(Catagory catagory)
         {
 
-            PreData.expenseCatagories.Add(catagory);
+            HttpResponseMessage responseMessage = await apiConfig.PodtAsync("Expense/api/Categories", catagory);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                //return catagories; //Error 
+            }
 
         }
 
-        public List<Catagory> GetExpenseCatagory()
+        public async Task<List<Catagory>> GetExpenseCatagory()
         {
 
-            try
+            List<Catagory> catagories = new List<Catagory>();
+
+            HttpResponseMessage responseMessage = await apiConfig.GetAsync("Expense/api/Categories");
+
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                if (PreData.expenseCatagories == null)
-                {
-                    StreamReader reader = new StreamReader("C:/Users/Ashen/Desktop/OriginalExpenseCatagoryList.txt");
-                    String json = reader.ReadToEnd();
-                    reader.Close();
-
-                    PreData.expenseCatagories = JsonSerializer.Deserialize<List<Catagory>>(json)!;
-
-
-                    return PreData.expenseCatagories;
-                }
-                else
-                {
-
-                    return PreData.expenseCatagories;
-
-
-                }
+                return catagories; //Error 
             }
-            catch (Exception ex)
-            {
-                
-                    PreData.expenseCatagories = new List<Catagory>();
-                    return PreData.expenseCatagories;
-                
-            }
+
+            catagories = await responseMessage.Content.ReadFromJsonAsync<List<Catagory>>();
+            return catagories;
 
         }
     }
