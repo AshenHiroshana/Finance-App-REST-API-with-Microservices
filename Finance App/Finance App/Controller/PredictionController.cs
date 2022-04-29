@@ -15,10 +15,10 @@ namespace Finance_App.Controller
     public class PredictionController
     {
 
-        public double ClculateCommingIncome()
+        public async Task<double> ClculateCommingIncome()
         {
             IncomeController incomeController = new IncomeController();
-            List<Transaction> transactions = incomeController.GetIncomeList();
+            List<Transaction> transactions = await incomeController.GetIncomeList();
 
             DateTime dateTimeMin = DateTime.Now;
             DateTime dateTimeMax = DateTime.Now;

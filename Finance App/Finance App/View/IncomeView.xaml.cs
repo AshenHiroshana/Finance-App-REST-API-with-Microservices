@@ -25,6 +25,11 @@ namespace Finance_App.View
     /// </summary>
     public partial class IncomeView : UserControl
     {
+
+        IncomeController incomeController = new IncomeController();
+        CatagoryController catagoryController = new CatagoryController();
+
+
         public IncomeView()
         {
 
@@ -56,8 +61,7 @@ namespace Finance_App.View
 
         }
 
-        IncomeController incomeController = new IncomeController();
-        private void AddIncome(object sender, RoutedEventArgs e)
+        private async void AddIncome(object sender, RoutedEventArgs e)
         {
             if (clickedButton == null)
             {
@@ -75,13 +79,17 @@ namespace Finance_App.View
                 incomeCatagory.Name = (string)clickedButton.ToolTip;
                 incomeCatagory.Icon = clickedButton.Name;
 
-                
+                List<Catagory> catagories = await catagoryController.GetIncomeCatagory();
+
 
                 Transaction incomeTransaction = new Transaction();
                 incomeTransaction.Description = incomeDescription;
                 incomeTransaction.Amount = incomeAmount;
                 incomeTransaction.Date = incomeDate;
+                incomeTransaction.CatagoryId = 0;
                 incomeTransaction.Catagory = incomeCatagory;
+
+                
 
                 if (incomeUpdating)
                 {
@@ -94,7 +102,9 @@ namespace Finance_App.View
                 }
                 else
                 {
-                    incomeController.addIncomeToFile(incomeTransaction);
+                    MessageBox.Show("S");
+                    incomeController.addIncome(incomeTransaction);
+                    MessageBox.Show("R");
                     updateIncomeList();
                     ClearIncomeForm();
                 }
@@ -104,12 +114,12 @@ namespace Finance_App.View
 
         }
 
-        public void updateIncomeList(List<Transaction> incomeList = null)
+        public async void updateIncomeList(List<Transaction> incomeList = null)
         {
 
             if (incomeList == null)
             {
-                incomeList = incomeController.GetIncomeListByFilter();
+                incomeList = await incomeController.GetIncomeListByFilter();
             }
 
             lstIncomeList.Children.Clear();
@@ -142,7 +152,7 @@ namespace Finance_App.View
         Boolean incomeUpdating = false;
         List<Transaction> incomeUpdatedList;
         Transaction updatedIncome;
-        private void Income_Is_Click(object sender, RoutedEventArgs e)
+        private async void Income_Is_Click(object sender, RoutedEventArgs e)
         {
             if (updatedIncome != null)
             {
@@ -150,7 +160,7 @@ namespace Finance_App.View
             }
             else
             {
-                incomeUpdatedList = incomeController.GetIncomeListByFilter();
+                incomeUpdatedList = await incomeController.GetIncomeListByFilter();
             }
 
             Button_Is_Click(sender, e);
@@ -301,7 +311,6 @@ namespace Finance_App.View
             }
             if (txtCatagoryname.Text != "")
             {
-                CatagoryController catagoryController = new CatagoryController();
                 List<Catagory> catagories = await catagoryController.GetIncomeCatagory();
 
                 
@@ -351,7 +360,6 @@ namespace Finance_App.View
             CatagoryList.Children.Clear();
             CatagoryList.RowDefinitions.Clear();
 
-            CatagoryController catagoryController = new CatagoryController();
 
             List<Catagory> catagories = await catagoryController.GetIncomeCatagory();
 

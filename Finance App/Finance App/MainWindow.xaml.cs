@@ -182,11 +182,11 @@ namespace Finance_App
         {
             if (show)
             {
-                x.Visibility = Visibility.Visible;
+               // x.Visibility = Visibility.Visible;
             }
             else
             {
-                x.Visibility = Visibility.Hidden;
+               // x.Visibility = Visibility.Hidden;
             }
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Income_Service.Models
 {
@@ -22,8 +23,12 @@ namespace Income_Service.Models
         [Required]
         public DateTime? Date { get; set; }
         
+        
         public int CatagoryId { get; set; }
-       
+
+        [ForeignKey("CatagoryId")]
+        public virtual Catagory? Catagory { get; set; }
+
         public Transaction()
         {
         }

@@ -24,7 +24,7 @@ namespace Finance_App.Controller
         {
 
             
-            HttpResponseMessage responseMessage = await apiConfig.PodtAsync("Income/api/Categories",catagory);
+            HttpResponseMessage responseMessage = await apiConfig.PostAsync("Income/api/Categories",catagory);
 
             if (!responseMessage.IsSuccessStatusCode)
             {
@@ -55,7 +55,7 @@ namespace Finance_App.Controller
         public async void SaveExpenseCatagory(Catagory catagory)
         {
 
-            HttpResponseMessage responseMessage = await apiConfig.PodtAsync("Expense/api/Categories", catagory);
+            HttpResponseMessage responseMessage = await apiConfig.PostAsync("Expense/api/Categories", catagory);
 
             if (!responseMessage.IsSuccessStatusCode)
             {

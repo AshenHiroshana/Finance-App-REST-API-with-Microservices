@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Income_Service.Models
 {
@@ -23,8 +24,13 @@ namespace Income_Service.Models
         [Required]
         public string? Icon { get; set; }
 
+        [JsonIgnore]
+        public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+
         public Catagory()
         {
         }
+
+      
     }
 }

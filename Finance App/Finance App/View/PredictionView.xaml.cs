@@ -35,11 +35,11 @@ namespace Finance_App.View
         }
 
 
-        public void UpdateIncomeChart()
+        public async void UpdateIncomeChart()
         {
             PredictionController predictionController = new PredictionController();
            
-            double numberOfMonth = predictionController.ClculateCommingIncome();
+            double numberOfMonth = await predictionController.ClculateCommingIncome();
 
             if (numberOfMonth < 1)
             {
@@ -50,7 +50,7 @@ namespace Finance_App.View
             LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
 
             IncomeController incomeController = new IncomeController();
-            List<Transaction> incomeList = incomeController.GetIncomeListByFilter();
+            List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
 
             List<Catagory> catagories = new List<Catagory>();
             Catagory newCatagory = new Catagory();
@@ -109,12 +109,12 @@ namespace Finance_App.View
 
 
 
-        public void UpdateExpenseChart()
+        public async void UpdateExpenseChart()
         {
 
             PredictionController predictionController = new PredictionController();
 
-            double numberOfMonth = predictionController.ClculateCommingIncome();
+            double numberOfMonth = await predictionController.ClculateCommingIncome();
 
            
 

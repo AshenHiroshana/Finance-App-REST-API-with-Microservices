@@ -1,10 +1,13 @@
 ﻿using Finance_App.Entity;
+using Finance_App.Resource;
 using Finance_App.View;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -14,45 +17,36 @@ namespace Finance_App.Controller
 {
     public class IncomeController
     {
-        public void addIncomeToFile(Transaction income)
+        ApiConfig apiConfig = new ApiConfig();
+        public async void addIncome(Transaction income)
         {
+            HttpResponseMessage responseMessage = await apiConfig.PostAsync("Income/api/Incomes", income);
 
-            List<Transaction> incomeList = GetIncomeList();
-
-            income.Id = findIncomeId();
-            incomeList.Add(income);
-
-            PreData.incomeList = incomeList;
-
-
-        }
-
-        public void deleteIncomeFromFile(Transaction oldIncome)
-        {
-
-
-            List<Transaction> fullIncomeList = GetIncomeList();
-            foreach (Transaction fullIncome in fullIncomeList)
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                if (oldIncome.Id == fullIncome.Id)
-                {
-                    oldIncome = fullIncome;
-
-                }
-
+                MessageBox.Show("ns");
+                MessageBox.Show(responseMessage.ToString());
             }
 
-            fullIncomeList.Remove(oldIncome);
+            
+        }
 
-            PreData.incomeList = fullIncomeList;
 
+        public async void deleteIncomeFromFile(Transaction oldIncome)
+        {
+            HttpResponseMessage responseMessage = await apiConfig.DeleteAsync("Income/api/Incomes", oldIncome.Id);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                //return transactions; //Error 
+            }
 
         }
 
-        public void updateIncomeListToFile(Transaction oldIncome, Transaction newIncome)
+        public async void updateIncomeListToFile(Transaction oldIncome, Transaction newIncome)
         {
 
-            List<Transaction> fullIncomeList = GetIncomeList();
+            List<Transaction> fullIncomeList = await GetIncomeList();
             foreach (Transaction fullIncome in fullIncomeList)
             {
               if (oldIncome.Id == fullIncome.Id)
@@ -62,7 +56,7 @@ namespace Finance_App.Controller
                 }
                
             }
-            newIncome.Id = findIncomeId(); 
+            newIncome.Id = await findIncomeId(); 
 
             fullIncomeList.Remove(oldIncome);
             fullIncomeList.Add(newIncome);
@@ -72,12 +66,12 @@ namespace Finance_App.Controller
 
         }
 
-        public List<Transaction> GetIncomeListByFilter()
+        public async Task<List<Transaction>> GetIncomeListByFilter()
         {
 
                 
                    
-                List<Transaction> incomeList = GetIncomeList();
+                List<Transaction> incomeList = await GetIncomeList();
 
                 List<Transaction> filteredIncomeList = new List<Transaction>();
                 foreach (Transaction item in incomeList)
@@ -123,20 +117,25 @@ namespace Finance_App.Controller
 
         }
 
-        public List<Transaction> GetIncomeList()
+        public async Task<List<Transaction>> GetIncomeList()
         {
-            if (PreData.incomeList == null)
+            List<Transaction> transactions = new List<Transaction>();
+
+            HttpResponseMessage responseMessage = await apiConfig.GetAsync("Income/api/Incomes");
+
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                PreData.incomeList = new List<Transaction>();
+                return transactions; //Error 
             }
 
-            return PreData.incomeList;
+            transactions = await responseMessage.Content.ReadFromJsonAsync<List<Transaction>>();
+            return transactions;
         }
 
-        public int findIncomeId()
+        public async Task<int> findIncomeId()
         {
             int id = 0;
-            List<Transaction> incomeList = GetIncomeList();
+            List<Transaction> incomeList = await GetIncomeList();
             if(incomeList != null)
             {
                 for (int i = 0; i < incomeList.Count; i++)

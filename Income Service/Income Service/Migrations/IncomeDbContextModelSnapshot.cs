@@ -92,6 +92,8 @@ namespace Income_Service.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CatagoryId");
+
                     b.ToTable("Transactions");
 
                     b.HasData(
@@ -100,7 +102,7 @@ namespace Income_Service.Migrations
                             Id = 1,
                             Amount = 100.0,
                             CatagoryId = 1,
-                            Date = new DateTime(2022, 4, 28, 11, 22, 28, 819, DateTimeKind.Local).AddTicks(9118),
+                            Date = new DateTime(2022, 4, 29, 18, 33, 21, 222, DateTimeKind.Local).AddTicks(9532),
                             Description = "a"
                         },
                         new
@@ -108,9 +110,25 @@ namespace Income_Service.Migrations
                             Id = 2,
                             Amount = 100.0,
                             CatagoryId = 2,
-                            Date = new DateTime(2022, 4, 28, 11, 22, 28, 819, DateTimeKind.Local).AddTicks(9131),
+                            Date = new DateTime(2022, 4, 29, 18, 33, 21, 222, DateTimeKind.Local).AddTicks(9544),
                             Description = "a"
                         });
+                });
+
+            modelBuilder.Entity("Income_Service.Models.Transaction", b =>
+                {
+                    b.HasOne("Income_Service.Models.Catagory", "Catagory")
+                        .WithMany("Transactions")
+                        .HasForeignKey("CatagoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Catagory");
+                });
+
+            modelBuilder.Entity("Income_Service.Models.Catagory", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 #pragma warning restore 612, 618
         }

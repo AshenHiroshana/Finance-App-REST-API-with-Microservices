@@ -102,7 +102,7 @@ namespace Finance_App.View
         }
 
 
-        public void UpdateChartView2()
+        public async void UpdateChartView2()
         {
 
 
@@ -110,7 +110,7 @@ namespace Finance_App.View
             LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
 
             IncomeController incomeController = new IncomeController();
-            List<Transaction> incomeList = incomeController.GetIncomeListByFilter();
+            List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
 
             List<Catagory> catagories = new List<Catagory>();
             Catagory newCatagory = new Catagory();

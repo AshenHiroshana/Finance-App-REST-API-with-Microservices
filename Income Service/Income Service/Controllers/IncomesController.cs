@@ -11,10 +11,12 @@ namespace Income_Service.Controllers
     {
 
         private readonly ITransactionRepository _transactionRepository;
+        private readonly ICatagoryRepository _catagoryRepository;
 
-        public IncomesController(ITransactionRepository repository)
+        public IncomesController(ITransactionRepository transactionRepository, ICatagoryRepository catagoryRepository)
         {
-            _transactionRepository = repository;
+            _transactionRepository = transactionRepository;
+            _catagoryRepository = catagoryRepository;
         }
 
         [HttpGet]
@@ -38,6 +40,10 @@ namespace Income_Service.Controllers
         [HttpPost]
         public IActionResult AddTransaction(Transaction transaction)
         {
+            Catagory catagory = _catagoryRepository.GetCatagoryByName(transaction.Catagory.Name);
+            transaction.Catagory = null;
+            transaction.Id = null;
+            transaction.CatagoryId = catagory.Id;
             var newTransaction = _transactionRepository.AddTransaction(transaction);
             return Ok(newTransaction); ;
         }
