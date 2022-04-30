@@ -43,7 +43,7 @@ namespace Finance_App.Controller
 
         }
 
-        public async void updateIncomeListToFile(Transaction oldIncome, Transaction newIncome)
+        public async void updateIncome(Transaction oldIncome, Transaction newIncome)
         {
 
             List<Transaction> fullIncomeList = await GetIncomeList();
@@ -56,14 +56,17 @@ namespace Finance_App.Controller
                 }
                
             }
-            newIncome.Id = await findIncomeId(); 
+            newIncome.Id = await findIncomeId();
 
-            fullIncomeList.Remove(oldIncome);
-            fullIncomeList.Add(newIncome);
+            HttpResponseMessage responseMessage = await apiConfig.PutAsync("Income/api/Incomes", newIncome);
 
-            PreData.incomeList = fullIncomeList;
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                MessageBox.Show("ns");
+                MessageBox.Show(responseMessage.ToString());
+            }
 
-
+            
         }
 
         public async Task<List<Transaction>> GetIncomeListByFilter()
@@ -144,7 +147,7 @@ namespace Finance_App.Controller
                     id = (int)transaction.Id;
                 }
             }
-            return ++id;
+            return id;
            
         }
 

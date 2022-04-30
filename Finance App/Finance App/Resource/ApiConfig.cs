@@ -52,7 +52,12 @@ namespace Finance_App.Resource
         {
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, ApiConfig.baseUrl + url);
             request.Content = new StringContent(JsonSerializer.Serialize(data), Encoding.UTF8, "application/json");
+            
+            var x = new StringContent(JsonSerializer.Serialize(data), Encoding.UTF8, "application/json");
 
+            MessageBox.Show(request.RequestUri.ToString());
+            MessageBox.Show(JsonSerializer.Serialize(data));
+            MessageBox.Show(x.ToString());
             //start loading
             Finance_App.MainWindow.ShowLoading(true);
             HttpResponseMessage responseMessage = await client.SendAsync(request);

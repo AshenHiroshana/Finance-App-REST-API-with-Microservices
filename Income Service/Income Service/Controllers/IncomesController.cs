@@ -51,7 +51,10 @@ namespace Income_Service.Controllers
         [HttpPut]
         public IActionResult UpdateTransaction(Transaction transaction)
         {
-            
+            Catagory catagory = _catagoryRepository.GetCatagoryByName(transaction.Catagory.Name);
+            transaction.Catagory = null;
+            transaction.CatagoryId = catagory.Id;
+
             if (_transactionRepository.GetTransaction((int)transaction.Id) == null)
             {
                 return NotFound("Transaction Not Found");

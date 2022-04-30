@@ -58,6 +58,7 @@ namespace Finance_App.View
             string selectedCatagory = (string)button.ToolTip;
             txtSelectedCatagory.Foreground = new SolidColorBrush(Colors.Gray);
             txtSelectedCatagory.Text = "You selected " + selectedCatagory + " as your Category";
+            txtSelectedCatagory.ToolTip = selectedCatagory;
 
         }
 
@@ -94,7 +95,10 @@ namespace Finance_App.View
                 if (incomeUpdating)
                 {
                     incomeUpdatedList.Add(incomeTransaction);
-                    incomeController.updateIncomeListToFile(updatedIncome, incomeTransaction);
+
+                    incomeCatagory.Name = (string)txtSelectedCatagory.ToolTip;
+                    incomeTransaction.Catagory = incomeCatagory;
+                    incomeController.updateIncome(updatedIncome, incomeTransaction);
                     updateIncomeList();
                     ClearIncomeForm();
                     incomeDelete.Visibility = Visibility.Collapsed;
@@ -181,6 +185,7 @@ namespace Finance_App.View
             txtIncomeAmount.Text = updatedIncome.Amount.ToString();
             txtIncomeDescription.Text = updatedIncome.Description;
             txtSelectedCatagory.Text = "You selected " + updatedIncome.Catagory.Name + " as your Category";
+            txtSelectedCatagory.ToolTip =  updatedIncome.Catagory.Name;
             txtIncomeDate.Text = updatedIncome.Date.ToString();
 
             incomeDelete.Visibility = Visibility.Visible;
