@@ -166,12 +166,10 @@ namespace Finance_App
 
             if (menuItem == "Home")
             {
-               
-               
+       
                 List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
                 List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
-                
-                
+
                 DataContext = new HomeView(expenseList, incomeList);
 
             }
