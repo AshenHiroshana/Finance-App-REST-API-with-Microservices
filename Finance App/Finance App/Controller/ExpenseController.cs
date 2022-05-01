@@ -1,10 +1,13 @@
 ﻿using Finance_App.Entity;
+using Finance_App.Resource;
 using Finance_App.View;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -14,45 +17,39 @@ namespace Finance_App.Controller
 {
     internal class ExpenseController
     {
-        public void addExpenseToFile(Transaction expense)
+        ApiConfig apiConfig = new ApiConfig();
+        public async void addExpense(Transaction expense)
         {
 
-            List<Transaction> expenseList = GetExpenseList();
+            HttpResponseMessage responseMessage = await apiConfig.PostAsync("Expense/api/Expenses", expense);
 
-            expense.Id = findExpenseId();
-            expenseList.Add(expense);
-
-            PreData.expenseList = expenseList;
-
-
-        }
-
-
-        public void deleteExpenseFromFile(Transaction oldExpense)
-        {
-
-
-            List<Transaction> fullExpenseList = GetExpenseList();
-            foreach (Transaction fullExpense in fullExpenseList)
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                if (oldExpense.Id == fullExpense.Id)
-                {
-                    oldExpense = fullExpense;
-
-                }
-
+                MessageBox.Show("ns");
+                MessageBox.Show(responseMessage.ToString());
             }
 
-            fullExpenseList.Remove(oldExpense);
-
-            PreData.expenseList = fullExpenseList;
 
         }
 
-        public void updateExpenseListToFile(Transaction oldExpense, Transaction newExpense)
+
+        public async void deleteExpenseFromFile(Transaction oldExpense)
         {
 
-            List<Transaction> fullExpenseList = GetExpenseList();
+
+            HttpResponseMessage responseMessage = await apiConfig.DeleteAsync("Expense/api/Expenses", oldExpense.Id);
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                //return transactions; //Error 
+            }
+
+        }
+
+        public async void updateExpense(Transaction oldExpense, Transaction newExpense)
+        {
+
+            List<Transaction> fullExpenseList = await GetExpenseList();
             foreach (Transaction fullExpense in fullExpenseList)
             {
                 if (oldExpense.Id == fullExpense.Id)
@@ -62,21 +59,24 @@ namespace Finance_App.Controller
                 }
                
             }
-            newExpense.Id = findExpenseId();
+            newExpense.Id = await findExpenseId();
 
-            fullExpenseList.Remove(oldExpense);
-            fullExpenseList.Add(newExpense);
+            HttpResponseMessage responseMessage = await apiConfig.PutAsync("Expense/api/Expenses", newExpense);
 
-            PreData.expenseList = fullExpenseList;
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                MessageBox.Show("ns");
+                MessageBox.Show(responseMessage.ToString());
+            }
 
 
         }
 
-        public List<Transaction> GetExpenseListByFilter()
+        public async Task<List<Transaction>> GetExpenseListByFilter()
         {
 
 
-                List<Transaction> expenseList = GetExpenseList();
+                List<Transaction> expenseList = await GetExpenseList();
 
                 List<Transaction> filteredExpenseList = new List<Transaction>();
                 foreach (Transaction item in expenseList)
@@ -122,21 +122,26 @@ namespace Finance_App.Controller
 
         }
 
-        public List<Transaction> GetExpenseList()
+        public async Task<List<Transaction>> GetExpenseList()
         {
-            if(PreData.expenseList == null)
+            List<Transaction> transactions = new List<Transaction>();
+
+            HttpResponseMessage responseMessage = await apiConfig.GetAsync("Expense/api/Expenses");
+
+            if (!responseMessage.IsSuccessStatusCode)
             {
-                PreData.expenseList = new List<Transaction>();
+                return transactions; //Error 
             }
-                
-            return PreData.expenseList;
-        
+
+            transactions = await responseMessage.Content.ReadFromJsonAsync<List<Transaction>>();
+            return transactions;
+
         }
 
-        public int findExpenseId()
+        public async Task<int> findExpenseId()
         {
             int id = 0;
-            List<Transaction> expenseList = GetExpenseList();
+            List<Transaction> expenseList = await GetExpenseList();
             if (expenseList != null)
             {
                 for (int i = 0; i < expenseList.Count; i++)
@@ -145,7 +150,7 @@ namespace Finance_App.Controller
                     id = (int)transaction.Id;
                 }
             }
-            return ++id;
+            return id;
 
         }
         public static int GetWeekOfYear(DateTime time)

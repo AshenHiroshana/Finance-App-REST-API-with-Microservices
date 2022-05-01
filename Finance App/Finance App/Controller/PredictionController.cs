@@ -48,10 +48,10 @@ namespace Finance_App.Controller
             return numberOfMonth;
         }
 
-        public double ClculateCommingExpense()
+        public async Task<double> ClculateCommingExpense()
         {
             ExpenseController expenseController = new ExpenseController();
-            List<Transaction> transactions = expenseController.GetExpenseList();
+            List<Transaction> transactions = await expenseController.GetExpenseList();
 
             DateTime dateTimeMin = DateTime.Now;
             DateTime dateTimeMax = DateTime.Now;

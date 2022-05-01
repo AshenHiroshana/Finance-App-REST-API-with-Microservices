@@ -15,6 +15,9 @@ namespace Finance_App.View
     /// </summary>
     public partial class ExpenseView : UserControl
     {
+        ExpenseController expenseController = new ExpenseController();
+        CatagoryController catagoryController = new CatagoryController();
+
         public ExpenseView()
         {
 
@@ -43,11 +46,12 @@ namespace Finance_App.View
             string selectedCatagory = (string)button.ToolTip;
             txtSelectedCatagory.Foreground = new SolidColorBrush(Colors.Gray);
             txtSelectedCatagory.Text = "You selected " + selectedCatagory + " as your Category";
+            txtSelectedCatagory.ToolTip = selectedCatagory;
 
         }
 
-        ExpenseController expenseController = new ExpenseController();
-        private void AddExpense(object sender, RoutedEventArgs e)
+        
+        private async void AddExpense(object sender, RoutedEventArgs e)
         {
             if (clickedButton == null)
             {
@@ -65,18 +69,20 @@ namespace Finance_App.View
                 expenseCatagory.Name = (string)clickedButton.ToolTip;
                 expenseCatagory.Icon = clickedButton.Name;
 
-                
+                List<Catagory> catagories = await catagoryController.GetIncomeCatagory();
 
                 Transaction expenseTransaction = new Transaction();
                 expenseTransaction.Description = expenseDescription;
                 expenseTransaction.Amount = expenseAmount;
                 expenseTransaction.Date = expenseDate;
+                expenseTransaction.CatagoryId = 0;
                 expenseTransaction.Catagory = expenseCatagory;
 
                 if (expenseUpdating)
                 {
                     expenseUpdatedList.Add(expenseTransaction);
-                    expenseController.updateExpenseListToFile(updatedExpense, expenseTransaction);
+                    expenseTransaction.Catagory = expenseCatagory;
+                    expenseController.updateExpense(updatedExpense, expenseTransaction);
                     updateExpenseList();
                     ClearExpenseForm();
                     expenseDelete.Visibility = Visibility.Collapsed;
@@ -85,7 +91,7 @@ namespace Finance_App.View
                 }
                 else
                 {
-                    expenseController.addExpenseToFile(expenseTransaction);
+                    expenseController.addExpense(expenseTransaction);
                     updateExpenseList();
                     ClearExpenseForm();
 
@@ -96,12 +102,12 @@ namespace Finance_App.View
 
         }
 
-        public void updateExpenseList(List<Transaction> expenseList = null)
+        public async void updateExpenseList(List<Transaction> expenseList = null)
         {
 
             if (expenseList == null)
             {
-                expenseList = expenseController.GetExpenseListByFilter();
+                expenseList = await expenseController.GetExpenseListByFilter();
             }
 
             lstExpenseList.Children.Clear();
@@ -134,7 +140,7 @@ namespace Finance_App.View
         Boolean expenseUpdating = false;
         List<Transaction> expenseUpdatedList;
         Transaction updatedExpense;
-        private void Expense_Is_Click(object sender, RoutedEventArgs e)
+        private async void Expense_Is_Click(object sender, RoutedEventArgs e)
         {
             if (updatedExpense != null)
             {
@@ -142,7 +148,7 @@ namespace Finance_App.View
             }
             else
             {
-                expenseUpdatedList = expenseController.GetExpenseListByFilter();
+                expenseUpdatedList = await expenseController.GetExpenseListByFilter();
             }
 
             Button_Is_Click(sender, e);
@@ -163,6 +169,7 @@ namespace Finance_App.View
             txtExpenseAmount.Text = updatedExpense.Amount.ToString();
             txtExpenseDescription.Text = updatedExpense.Description;
             txtSelectedCatagory.Text = "You selected " + updatedExpense.Catagory.Name + " as your Category";
+            txtSelectedCatagory.ToolTip = updatedExpense.Catagory.Name;
             txtExpenseDate.Text = updatedExpense.Date.ToString();
 
             expenseDelete.Visibility = Visibility.Visible;
@@ -339,7 +346,7 @@ namespace Finance_App.View
             CatagoryList.Children.Clear();
             CatagoryList.RowDefinitions.Clear();
 
-            CatagoryController catagoryController = new CatagoryController();
+           
 
             List<Catagory> catagories = await catagoryController.GetExpenseCatagory();
 

@@ -31,7 +31,7 @@ namespace Finance_App
         public MainWindow()
         {
             InitializeComponent();
-            PreData preData = new PreData();
+            //PreData preData = new PreData();
             x = gif;
         }
 

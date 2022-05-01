@@ -122,7 +122,7 @@ namespace Finance_App.View
             LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
 
             ExpenseController expenseController = new ExpenseController();
-            List<Transaction> expenseList = expenseController.GetExpenseListByFilter();
+            List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
 
             List<Catagory> catagories = new List<Catagory>();
             Catagory newCatagory = new Catagory();
