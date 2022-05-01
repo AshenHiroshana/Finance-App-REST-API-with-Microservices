@@ -1,4 +1,5 @@
 ﻿using Finance_App.Controller;
+using Finance_App.Entity;
 using Finance_App.View;
 using System;
 using System.Collections.Generic;
@@ -39,16 +40,7 @@ namespace Finance_App
         {
             ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
             string menuItem = lbi.Name.ToString();
-            
-
-            if (menuItem == "Home")
-                DataContext = new HomeView();
-            if (menuItem == "Income")
-                DataContext = new IncomeView();
-            if (menuItem == "Expence")
-                DataContext = new ExpenseView();
-            if (menuItem == "Prediction")
-                DataContext = new PredictionView();
+            menuItemChange(menuItem);
 
         }
 
@@ -143,14 +135,7 @@ namespace Finance_App
                 ListBoxItem selectedMenuItem = (ListBoxItem)listBox.SelectedItem;
 
                 string menuItem = selectedMenuItem.Name.ToString();
-                if (menuItem == "Home")
-                    DataContext = new HomeView();
-                if (menuItem == "Income")
-                    DataContext = new IncomeView();
-                if (menuItem == "Expence")
-                    DataContext = new ExpenseView();
-                if (menuItem == "Prediction")
-                    DataContext = new PredictionView();
+                menuItemChange(menuItem);
             }
         }
 
@@ -163,19 +148,40 @@ namespace Finance_App
             ListBoxItem selectedMenuItem = (ListBoxItem)listBox.SelectedItem;
             
             string menuItem = selectedMenuItem.Name.ToString();
+            menuItemChange(menuItem);
+
+        }
+
+
+       public async void menuItemChange(string menuItem)
+        {
+
+            ExpenseController expenseController = new ExpenseController();
+            IncomeController incomeController = new IncomeController();
+            PredictionController predictionController = new PredictionController();
+
             if (menuItem == "Home")
-                DataContext = new HomeView();
+            {
+                List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
+                List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
+                DataContext = new HomeView(expenseList, incomeList);
+
+            }
             if (menuItem == "Income")
                 DataContext = new IncomeView();
             if (menuItem == "Expence")
                 DataContext = new ExpenseView();
             if (menuItem == "Prediction")
-                DataContext = new PredictionView();
+            {
+                List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
+                List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
+                double numberOfMonthIncome = await predictionController.ClculateCommingIncome();
+                double numberOfMonthExpense = await predictionController.ClculateCommingExpense();
 
+                DataContext = new PredictionView(expenseList, incomeList, numberOfMonthExpense, numberOfMonthIncome);
+            }
+               
         }
-
-
-       
 
 
         public static void ShowLoading(Boolean show)

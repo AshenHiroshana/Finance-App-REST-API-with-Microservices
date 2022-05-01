@@ -27,11 +27,11 @@ namespace Finance_App.View
     /// </summary>
     public partial class HomeView : UserControl
     {
-        public HomeView()
+        public HomeView(List<Transaction> expenseList, List<Transaction> incomeList)
         {
             InitializeComponent();
-            UpdateChartView();
-            UpdateChartView2();
+            UpdateChartView(expenseList);
+            UpdateChartView2(incomeList);
 
 
             DataContext = this;
@@ -41,7 +41,7 @@ namespace Finance_App.View
 
 
 
-        public async void UpdateChartView()
+        public async void UpdateChartView(List<Transaction> expenseList)
         {
 
 
@@ -49,10 +49,9 @@ namespace Finance_App.View
             LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
 
             ExpenseController expenseController = new ExpenseController();
-            CatagoryController catagoryController = new CatagoryController();
-            List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
+                        
 
-            List<Catagory> catagories = await catagoryController.GetExpenseCatagory();
+            List<Catagory> catagories = new List<Catagory>();
             Catagory newCatagory = new Catagory();
 
             Catagory chartCatagory = new Catagory();
@@ -95,7 +94,7 @@ namespace Finance_App.View
             }
             txtExpenseTotalAmuont.Text = "Rs : " + fullAmount.ToString();
             fullAmount = 0;
-
+            
             SeriesCollection = seriesCollection;
 
 
@@ -103,7 +102,7 @@ namespace Finance_App.View
         }
 
 
-        public async void UpdateChartView2()
+        public async void UpdateChartView2(List<Transaction> incomeList)
         {
 
 
@@ -111,7 +110,7 @@ namespace Finance_App.View
             LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
 
             IncomeController incomeController = new IncomeController();
-            List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
+           // List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
 
             List<Catagory> catagories = new List<Catagory>();
             Catagory newCatagory = new Catagory();

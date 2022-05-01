@@ -25,21 +25,19 @@ namespace Finance_App.View
     /// </summary>
     public partial class PredictionView : UserControl
     {
-        public PredictionView()
+        public PredictionView(List<Transaction> expenseList, List<Transaction> incomeList, double numberOfMonthExpense, double numberOfMonthIncome)
         {
             InitializeComponent();
-            UpdateIncomeChart();
-            UpdateExpenseChart();
+            UpdateIncomeChart(incomeList, numberOfMonthIncome);
+            UpdateExpenseChart(expenseList, numberOfMonthExpense);
 
 
         }
 
 
-        public async void UpdateIncomeChart()
+        public async void UpdateIncomeChart(List<Transaction> incomeList, double numberOfMonth)
         {
-            PredictionController predictionController = new PredictionController();
            
-            double numberOfMonth = await predictionController.ClculateCommingIncome();
 
             if (numberOfMonth < 1)
             {
@@ -49,9 +47,7 @@ namespace Finance_App.View
 
             LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
 
-            IncomeController incomeController = new IncomeController();
-            List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
-
+           
             List<Catagory> catagories = new List<Catagory>();
             Catagory newCatagory = new Catagory();
 
@@ -109,21 +105,16 @@ namespace Finance_App.View
 
 
 
-        public async void UpdateExpenseChart()
+        public async void UpdateExpenseChart(List<Transaction> expenseList, double numberOfMonth)
         {
 
-            PredictionController predictionController = new PredictionController();
-
-            double numberOfMonth = await predictionController.ClculateCommingIncome();
-
-           
+                  
 
 
             LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
 
             ExpenseController expenseController = new ExpenseController();
-            List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
-
+            
             List<Catagory> catagories = new List<Catagory>();
             Catagory newCatagory = new Catagory();
 

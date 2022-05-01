@@ -22,7 +22,6 @@ namespace Finance_App.Entity
         {
         }
 
-
-
+     
     }
 }
