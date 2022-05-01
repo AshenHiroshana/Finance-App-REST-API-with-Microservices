@@ -1,5 +1,6 @@
 ﻿using Expense_Service.Models;
 using Expense_Service.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace Expense_Service.Services
 {
@@ -11,7 +12,7 @@ namespace Expense_Service.Services
 
         public List<Transaction> GetAllTransactions()
         {
-            return _context.Transactions.ToList();
+            return _context.Transactions.Include(t => t.Catagory).ToList();
         }
 
         public Transaction GetTransaction(int id)
@@ -21,6 +22,7 @@ namespace Expense_Service.Services
 
         public Transaction AddTransaction(Transaction transaction)
         {
+
             _context.Transactions.Add(transaction);
             _context.SaveChanges();
             return transaction;

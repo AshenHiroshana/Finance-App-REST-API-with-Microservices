@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Expense_Service.Models
 {
@@ -17,7 +18,11 @@ namespace Expense_Service.Models
         [Required]
         public DateTime? Date { get; set; }
 
+
         public int CatagoryId { get; set; }
+
+        [ForeignKey("CatagoryId")]
+        public virtual Catagory? Catagory { get; set; }
 
         public Transaction()
         {

@@ -252,6 +252,9 @@
         "catagoryId": {
           "format": "int32",
           "type": "integer"
+        },
+        "catagory": {
+          "$ref": "#/definitions/Catagory"
         }
       }
     }

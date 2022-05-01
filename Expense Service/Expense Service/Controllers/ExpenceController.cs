@@ -11,10 +11,12 @@ namespace Expense_Service.Controllers
     {
 
         private readonly ITransactionRepository _transactionRepository;
+        private readonly ICatagoryRepository _catagoryRepository;
 
-        public ExpensesController(ITransactionRepository repository)
+        public ExpensesController(ITransactionRepository transactionRepository, ICatagoryRepository catagoryRepository)
         {
-            _transactionRepository = repository;
+            _transactionRepository = transactionRepository;
+            _catagoryRepository = catagoryRepository;
         }
 
         [HttpGet]
@@ -38,6 +40,10 @@ namespace Expense_Service.Controllers
         [HttpPost]
         public IActionResult AddTransaction(Transaction transaction)
         {
+            Catagory catagory = _catagoryRepository.GetCatagoryByName(transaction.Catagory.Name);
+            transaction.Catagory = null;
+            transaction.Id = null;
+            transaction.CatagoryId = catagory.Id;
             var newTransaction = _transactionRepository.AddTransaction(transaction);
             return Ok(newTransaction); ;
         }
@@ -45,7 +51,9 @@ namespace Expense_Service.Controllers
         [HttpPut]
         public IActionResult UpdateTransaction(Transaction transaction)
         {
-            
+            Catagory catagory = _catagoryRepository.GetCatagoryByName(transaction.Catagory.Name);
+            transaction.Catagory = null;
+            transaction.CatagoryId = catagory.Id;
             if (_transactionRepository.GetTransaction((int)transaction.Id) == null)
             {
                 return NotFound("Transaction Not Found");
