@@ -28,12 +28,16 @@ namespace Finance_App
     public partial class MainWindow : Window
     {
 
-        static Image x;
+        static Image loadingImage;
+        static Window parent;
         public MainWindow()
         {
             InitializeComponent();
-            //PreData preData = new PreData();
-            x = gif;
+            loadingImage = loadingImageMainWindow;
+            parent = Window.GetWindow(this);
+
+            menuList.SelectedIndex = 0;
+
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -162,8 +166,12 @@ namespace Finance_App
 
             if (menuItem == "Home")
             {
+               
+               
                 List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
                 List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
+                
+                
                 DataContext = new HomeView(expenseList, incomeList);
 
             }
@@ -173,11 +181,12 @@ namespace Finance_App
                 DataContext = new ExpenseView();
             if (menuItem == "Prediction")
             {
+               
                 List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
                 List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
                 double numberOfMonthIncome = await predictionController.ClculateCommingIncome();
                 double numberOfMonthExpense = await predictionController.ClculateCommingExpense();
-
+                
                 DataContext = new PredictionView(expenseList, incomeList, numberOfMonthExpense, numberOfMonthIncome);
             }
                
@@ -186,13 +195,16 @@ namespace Finance_App
 
         public static void ShowLoading(Boolean show)
         {
+            
             if (show)
             {
-               // x.Visibility = Visibility.Visible;
+                parent.IsEnabled = false;
+                loadingImage.Visibility = Visibility.Visible;
             }
             else
             {
-               // x.Visibility = Visibility.Hidden;
+                parent.IsEnabled = true;
+                loadingImage.Visibility = Visibility.Hidden;
             }
         }
 

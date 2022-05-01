@@ -88,7 +88,7 @@
 
 
                         <ListView BorderThickness="0" Name="menuList" SelectionChanged="ListView_SelectionChanged" Foreground="#FF313131" FontFamily="Champagne &amp; Limousines" FontSize="18">
-                            <ListViewItem IsSelected="True" Name="Home" Height="45" Padding="0">
+                            <ListViewItem Name="Home" Height="45" Padding="0">
                                     <StackPanel Orientation="Horizontal" Margin="10 0">
                                     <Viewbox  Width="25" Height="25" Margin="0" VerticalAlignment="Center"  HorizontalAlignment="Left">
                                         <Canvas Width="24" Height="24" >
@@ -179,14 +179,32 @@
                             />
                 
                 
-                <Image 
-                    x:Name="gif"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Width="150"
-                    Height="150"
-                    Visibility="Hidden"
-                    Source="/Resource/lo.png" />
+                <Image x:Name="loadingImageMainWindow"
+                       Visibility="Hidden"
+                       Margin="0 0 150 0"
+                       Source="\Resource\loading.png"  
+                       RenderTransformOrigin="0.5,0.5" 
+                       Width="150"
+                       Height="150"
+                       HorizontalAlignment="Center"
+                       Grid.Column="1"
+                       Grid.Row="1">
+                    <Image.RenderTransform>
+                        <RotateTransform x:Name="MyAnimatedTransform" Angle="0" />
+                    </Image.RenderTransform>
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="MyAnimatedTransform"
+                                        Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                        From="0.0" To="360" Duration="0:0:3" RepeatBehavior="Forever"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
 
 
             </Grid>

@@ -73,8 +73,9 @@ namespace Finance_App.Controller
         {
 
                 
-                   
+                
                 List<Transaction> incomeList = await GetIncomeList();
+                
 
                 List<Transaction> filteredIncomeList = new List<Transaction>();
                 foreach (Transaction item in incomeList)

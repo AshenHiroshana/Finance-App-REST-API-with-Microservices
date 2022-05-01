@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <None Remove="Resource\F.png" />
-    <None Remove="Resource\lo.png" />
+    <None Remove="Resource\loading.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <Resource Include="Resource\F.png" />
-    <Resource Include="Resource\lo.png" />
+    <Resource Include="Resource\loading.png" />
   </ItemGroup>
 
 </Project>
