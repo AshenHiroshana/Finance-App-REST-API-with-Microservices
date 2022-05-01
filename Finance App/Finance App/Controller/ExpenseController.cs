@@ -77,13 +77,15 @@ namespace Finance_App.Controller
 
 
                 List<Transaction> expenseList = await GetExpenseList();
+                
 
-                List<Transaction> filteredExpenseList = new List<Transaction>();
+            List<Transaction> filteredExpenseList = new List<Transaction>();
                 foreach (Transaction item in expenseList)
                 {
                     DateTime itemDate = (DateTime)item.Date;
                     if (Common.selectedFilter == "filterByDate")
                     {
+                    
                         if (Common.selectedDate.Month == itemDate.Month && Common.selectedDate.Year == itemDate.Year && Common.selectedDate.Day == itemDate.Date.Day)
                         {
                             filteredExpenseList.Add(item);
@@ -91,21 +93,24 @@ namespace Finance_App.Controller
                     }
                     else if (Common.selectedFilter == "filterByMonth")
                     {
-                        if (Common.selectedDate.Month == itemDate.Month && Common.selectedDate.Year == itemDate.Year)
+                    
+                    if (Common.selectedDate.Month == itemDate.Month && Common.selectedDate.Year == itemDate.Year)
                         {
                             filteredExpenseList.Add(item);
                         }
                     }
                     else if (Common.selectedFilter == "filterByYear")
                     {
-                        if (Common.selectedDate.Year == itemDate.Year)
+                    
+                    if (Common.selectedDate.Year == itemDate.Year)
                         {
                             filteredExpenseList.Add(item);
                         }
                     }
                     else if (Common.selectedFilter == "filterByWeek")
                     {
-                        int week = GetWeekOfYear(itemDate);
+                    
+                    int week = GetWeekOfYear(itemDate);
                         if (GetWeekOfYear(Common.selectedDate) == GetWeekOfYear(itemDate))
                         {
                             filteredExpenseList.Add(item);

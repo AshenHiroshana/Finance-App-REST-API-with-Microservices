@@ -108,13 +108,17 @@ namespace Finance_App.View
             if (expenseList == null)
             {
                 expenseList = await expenseController.GetExpenseListByFilter();
+                
+
             }
+
+            
 
             lstExpenseList.Children.Clear();
             lstExpenseList.RowDefinitions.Clear();
             for (int i = 0; i < expenseList.Count; i++)
             {
-
+                
                 Style? style = this.FindResource("OutlinedButton") as Style;
                 string text = " Rs : " + expenseList[i].Amount;
                 Button button = Common.CreateCatagoryButton(text, expenseList[i].Catagory.Icon, style);

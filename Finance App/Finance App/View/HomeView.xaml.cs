@@ -49,9 +49,10 @@ namespace Finance_App.View
             LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
 
             ExpenseController expenseController = new ExpenseController();
+            CatagoryController catagoryController = new CatagoryController();
             List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
 
-            List<Catagory> catagories = new List<Catagory>();
+            List<Catagory> catagories = await catagoryController.GetExpenseCatagory();
             Catagory newCatagory = new Catagory();
 
             Catagory chartCatagory = new Catagory();

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "LiveCharts/0.9.7": {
+      "LiveCharts/0.9.6": {
         "type": "package",
         "compile": {
           "lib/net45/LiveCharts.dll": {}
@@ -11,10 +11,10 @@
           "lib/net45/LiveCharts.dll": {}
         }
       },
-      "LiveCharts.Wpf/0.9.7": {
+      "LiveCharts.Wpf/0.9.6": {
         "type": "package",
         "dependencies": {
-          "LiveCharts": "0.9.7"
+          "LiveCharts": "0.9.6"
         },
         "compile": {
           "lib/net45/LiveCharts.Wpf.dll": {}
@@ -90,10 +90,10 @@
     }
   },
   "libraries": {
-    "LiveCharts/0.9.7": {
-      "sha512": "p4xyBrUaNNfkWZSNsIle0r51cyVyFg0Yi0uBRZM5GQtdFiA/7guZHlffFyNUILIdux10Ch2hUaJpcZENVU9aaQ==",
+    "LiveCharts/0.9.6": {
+      "sha512": "EFnsGia8suieY1Cm7FoqcyYsCqhIe62NvoLo+OdAPtF0+O2zFIovILDLMQ/2rQgqUEcIL3qLkyFAIRbHST831g==",
       "type": "package",
-      "path": "livecharts/0.9.7",
+      "path": "livecharts/0.9.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -106,15 +106,15 @@
         "lib/portable-net45+win8+wp8/LiveCharts.XML",
         "lib/portable-net45+win8+wp8/LiveCharts.dll",
         "lib/portable-net45+win8+wp8/LiveCharts.pdb",
-        "livecharts.0.9.7.nupkg.sha512",
+        "livecharts.0.9.6.nupkg.sha512",
         "livecharts.nuspec",
         "readme.txt"
       ]
     },
-    "LiveCharts.Wpf/0.9.7": {
-      "sha512": "lv6YZoK0B4yWykMq5b9grZXtIbTj+OWu4sVN9GDpdgV6zffu64m4d5CW8KSjfSl9rB8VU649x1NZvhoU67hCDg==",
+    "LiveCharts.Wpf/0.9.6": {
+      "sha512": "P0UgZdp6tKo9Zhl2rnoW6xHYiIpShpnok2pAg6sz8v/V5l9xhzMln+rfWdUGPDPBPWiYKmp1WajB3Ka6UxlrOQ==",
       "type": "package",
-      "path": "livecharts.wpf/0.9.7",
+      "path": "livecharts.wpf/0.9.6",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -125,7 +125,7 @@
         "lib/net45/LiveCharts.Wpf.XML",
         "lib/net45/LiveCharts.Wpf.dll",
         "lib/net45/LiveCharts.Wpf.pdb",
-        "livecharts.wpf.0.9.7.nupkg.sha512",
+        "livecharts.wpf.0.9.6.nupkg.sha512",
         "livecharts.wpf.nuspec",
         "tools/install.ps1"
       ]
@@ -264,7 +264,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "LiveCharts.Wpf >= 0.9.7",
+      "LiveCharts.Wpf >= 0.9.6",
       "System.Net.Http.Json >= 6.0.0"
     ]
   },
@@ -309,7 +309,7 @@
         "dependencies": {
           "LiveCharts.Wpf": {
             "target": "Package",
-            "version": "[0.9.7, )"
+            "version": "[0.9.6, )"
           },
           "System.Net.Http.Json": {
             "target": "Package",
@@ -343,7 +343,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'LiveCharts 0.9.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "LiveCharts",
       "targetGraphs": [
         "net6.0-windows7.0"
@@ -353,7 +353,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'LiveCharts.Wpf 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'LiveCharts.Wpf 0.9.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "LiveCharts.Wpf",
       "targetGraphs": [
         "net6.0-windows7.0"

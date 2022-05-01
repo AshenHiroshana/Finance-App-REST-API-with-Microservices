@@ -42,7 +42,7 @@
           "dependencies": {
             "LiveCharts.Wpf": {
               "target": "Package",
-              "version": "[0.9.7, )"
+              "version": "[0.9.6, )"
             },
             "System.Net.Http.Json": {
               "target": "Package",
