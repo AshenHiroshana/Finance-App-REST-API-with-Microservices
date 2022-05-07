@@ -22,9 +22,9 @@ namespace Finance_App
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    
 
-    
+
+
     public partial class MainWindow : Window
     {
 
@@ -57,7 +57,7 @@ namespace Finance_App
             }
             catch (Exception ex)
             {
-                
+
             }
         }
 
@@ -69,7 +69,7 @@ namespace Finance_App
             }
             catch (Exception ex)
             {
-                
+
             }
         }
 
@@ -100,7 +100,7 @@ namespace Finance_App
             }
             catch (Exception ex)
             {
-                
+
             }
         }
 
@@ -134,7 +134,7 @@ namespace Finance_App
             Common.selectedFilter = boxItem.Name;
 
             ListBox listBox = (ListBox)menuList;
-           if (listBox != null && listBox.SelectedItem != null)
+            if (listBox != null && listBox.SelectedItem != null)
             {
                 ListBoxItem selectedMenuItem = (ListBoxItem)listBox.SelectedItem;
 
@@ -143,21 +143,21 @@ namespace Finance_App
             }
         }
 
-       
+
         private void changeSelectedDate(object sender, RoutedEventArgs e)
         {
             DatePicker datePicker = sender as DatePicker;
             Common.selectedDate = (DateTime)datePicker.GetValue(DatePicker.SelectedDateProperty);
             ListBox listBox = (ListBox)menuList;
             ListBoxItem selectedMenuItem = (ListBoxItem)listBox.SelectedItem;
-            
+
             string menuItem = selectedMenuItem.Name.ToString();
             menuItemChange(menuItem);
 
         }
 
 
-       public async void menuItemChange(string menuItem)
+        public async void menuItemChange(string menuItem)
         {
 
             ExpenseController expenseController = new ExpenseController();
@@ -166,7 +166,7 @@ namespace Finance_App
 
             if (menuItem == "Home")
             {
-       
+
                 List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
                 List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
 
@@ -179,21 +179,21 @@ namespace Finance_App
                 DataContext = new ExpenseView();
             if (menuItem == "Prediction")
             {
-               
+
                 List<Transaction> incomeList = await incomeController.GetIncomeListByFilter();
                 List<Transaction> expenseList = await expenseController.GetExpenseListByFilter();
                 double numberOfMonthIncome = await predictionController.ClculateCommingIncome();
                 double numberOfMonthExpense = await predictionController.ClculateCommingExpense();
-                
+
                 DataContext = new PredictionView(expenseList, incomeList, numberOfMonthExpense, numberOfMonthIncome);
             }
-               
+
         }
 
 
         public static void ShowLoading(Boolean show)
         {
-            
+
             if (show)
             {
                 parent.IsEnabled = false;
@@ -206,8 +206,8 @@ namespace Finance_App
             }
         }
 
-     
 
-        
+
+
     }
 }
