@@ -1,5 +1,5 @@
 ﻿using Finance_App.Entity;
-using Finance_App.Resource;
+using Finance_App.Service;
 using Finance_App.View;
 using System;
 using System.Collections.Generic;
@@ -20,15 +20,19 @@ namespace Finance_App.Controller
         ApiConfig apiConfig = new ApiConfig();
         public async void addIncome(Transaction income)
         {
+            BackUpData.writeBacakUpDataToFile("Incomes", JsonSerializer.Serialize(income));
             HttpResponseMessage responseMessage = await apiConfig.PostAsync("Income/api/Incomes", income);
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                MessageBox.Show("ns");
-                MessageBox.Show(responseMessage.ToString());
+                MessageBox.Show("Submission Failed");
+                //MessageBox.Show(responseMessage.ToString());
+            }
+            else
+            {
+                BackUpData.writeBacakUpDataToFile("Incomes", "");
             }
 
-            
         }
 
 
@@ -62,8 +66,8 @@ namespace Finance_App.Controller
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                MessageBox.Show("ns");
-                MessageBox.Show(responseMessage.ToString());
+                MessageBox.Show("Submission Failed");
+                //MessageBox.Show(responseMessage.ToString());
             }
 
             

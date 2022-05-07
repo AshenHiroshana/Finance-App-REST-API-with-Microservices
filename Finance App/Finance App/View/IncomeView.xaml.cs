@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Text.Json;
+using Finance_App.Service;
 
 namespace Finance_App.View
 {
@@ -37,7 +38,7 @@ namespace Finance_App.View
             InitializeComponent();
             updateIncomeList();
             updateCatagoryList();
-
+            displayIncomeCashedData();
 
         }
 
@@ -106,11 +107,12 @@ namespace Finance_App.View
                 }
                 else
                 {
-                    MessageBox.Show("S");
+                    //MessageBox.Show("S");
                     incomeController.addIncome(incomeTransaction);
-                    MessageBox.Show("R");
+                    //MessageBox.Show("R");
                     updateIncomeList();
                     ClearIncomeForm();
+                    //displayIncomeCashedData();
                 }
 
 
@@ -418,6 +420,23 @@ namespace Finance_App.View
             }
            
 
+        }
+
+        private void displayIncomeCashedData()
+        {
+            string cashedIncome = BackUpData.readBacakUpDataFromFile("Incomes");
+            if (cashedIncome != null && cashedIncome !="")
+            {
+                Transaction cashedTransaction = JsonSerializer.Deserialize<Transaction>(cashedIncome);
+                txtIncomeAmount.Text = cashedTransaction.Amount.ToString();
+                txtIncomeDescription.Text = cashedTransaction.Description;
+                txtSelectedCatagory.Text = "You selected " + cashedTransaction.Catagory.Name + " as your Category";
+                txtSelectedCatagory.ToolTip = cashedTransaction.Catagory.Name;
+                txtIncomeDate.Text = cashedTransaction.Date.ToString();
+
+                incomeDelete.Visibility = Visibility.Visible;
+
+            }
         }
 
 

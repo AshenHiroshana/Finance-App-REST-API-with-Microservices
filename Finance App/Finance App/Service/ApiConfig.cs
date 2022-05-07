@@ -9,7 +9,7 @@ using Finance_App.Entity;
 using System.Text.Json;
 using System.Windows;
 
-namespace Finance_App.Resource
+namespace Finance_App.Service
 {
     public  class ApiConfig
     {

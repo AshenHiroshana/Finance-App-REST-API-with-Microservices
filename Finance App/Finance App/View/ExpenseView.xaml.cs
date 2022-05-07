@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Data;
+using Finance_App.Service;
+using System.Text.Json;
 
 namespace Finance_App.View
 {
@@ -25,6 +27,7 @@ namespace Finance_App.View
             InitializeComponent();
             updateExpenseList();
             updateCatagoryList();
+            displayIncomeCashedData();
 
 
         }
@@ -94,6 +97,7 @@ namespace Finance_App.View
                     expenseController.addExpense(expenseTransaction);
                     updateExpenseList();
                     ClearExpenseForm();
+                    //displayIncomeCashedData();
 
                 }
 
@@ -405,6 +409,23 @@ namespace Finance_App.View
 
             
 
+        }
+
+        private void displayIncomeCashedData()
+        {
+            string cashedExpense = BackUpData.readBacakUpDataFromFile("Expenses");
+            if (cashedExpense != null && cashedExpense != "")
+            {
+                Transaction cashedTransaction = JsonSerializer.Deserialize<Transaction>(cashedExpense);
+                txtExpenseAmount.Text = cashedTransaction.Amount.ToString();
+                txtExpenseDescription.Text = cashedTransaction.Description;
+                txtSelectedCatagory.Text = "You selected " + cashedTransaction.Catagory.Name + " as your Category";
+                txtSelectedCatagory.ToolTip = cashedTransaction.Catagory.Name;
+                txtExpenseDate.Text = cashedTransaction.Date.ToString();
+
+                expenseDelete.Visibility = Visibility.Visible;
+
+            }
         }
 
 

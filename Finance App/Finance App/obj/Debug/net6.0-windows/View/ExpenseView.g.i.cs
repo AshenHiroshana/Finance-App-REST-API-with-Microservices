@@ -237,7 +237,7 @@ namespace Finance_App.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Finance App WPF Client;V1.0.0.0;component/view/expenseview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Finance App WPF Client;component/view/expenseview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\ExpenseView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

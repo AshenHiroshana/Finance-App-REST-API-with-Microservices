@@ -86,7 +86,7 @@ namespace Finance_App.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Finance App WPF Client;V1.0.0.0;component/view/predictionview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Finance App WPF Client;component/view/predictionview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\PredictionView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
