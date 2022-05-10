@@ -22,10 +22,15 @@ namespace Finance_App.Service
 
         public static string readBacakUpDataFromFile(string file)
         {
-            StreamReader reader = new StreamReader("./" + file + ".txt");
-            String json = reader.ReadToEnd();
-            reader.Close();
-            return json;
+            if (File.Exists("./" + file + ".txt"))
+            {
+                StreamReader reader = new StreamReader("./" + file + ".txt");
+                String json = reader.ReadToEnd();
+                reader.Close();
+                return json;
+            }
+
+            return null;
 
             /*List<Transaction> expenseList = JsonSerializer.Deserialize<List<Transaction>>(json)!;*/
         }
