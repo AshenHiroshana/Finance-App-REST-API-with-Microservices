@@ -209,6 +209,13 @@ namespace Finance_App.View
             {
                 txtIncomeAmount.BorderBrush = new SolidColorBrush(Color.FromRgb(217, 83, 79));
             }
+            else
+            {
+                if (double.Parse(txtIncomeAmount.Text) < 0)
+                {
+                    txtIncomeAmount.BorderBrush = new SolidColorBrush(Color.FromRgb(217, 83, 79));
+                }
+            }
             if (txtIncomeDate.Text == "")
             {
                 txtIncomeDate.BorderBrush = new SolidColorBrush(Color.FromRgb(217, 83, 79));
@@ -220,7 +227,7 @@ namespace Finance_App.View
                 approveTxtIncomeDescription = true;
             }
 
-            if (txtIncomeAmount.Text != "" && double.TryParse(txtIncomeAmount.Text, out x))
+            if (txtIncomeAmount.Text != "" && double.TryParse(txtIncomeAmount.Text, out x) && double.Parse(txtIncomeAmount.Text) >= 0)
             {
 
                 txtIncomeAmount.BorderBrush = new SolidColorBrush(Color.FromRgb(70, 70, 70));

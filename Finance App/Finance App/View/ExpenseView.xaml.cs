@@ -199,6 +199,13 @@ namespace Finance_App.View
             {
                 txtExpenseAmount.BorderBrush = new SolidColorBrush(Color.FromRgb(217, 83, 79));
             }
+            else
+            {
+                if (double.Parse(txtExpenseAmount.Text) < 0)
+                {
+                    txtExpenseAmount.BorderBrush = new SolidColorBrush(Color.FromRgb(217, 83, 79));
+                }
+            }
             if (txtExpenseDate.Text == "")
             {
                 txtExpenseDate.BorderBrush = new SolidColorBrush(Color.FromRgb(217, 83, 79));
@@ -210,12 +217,13 @@ namespace Finance_App.View
                 approveTxtExpenseDescription = true;
             }
 
-            if (txtExpenseAmount.Text != "" && double.TryParse(txtExpenseAmount.Text, out x))
+            if (txtExpenseAmount.Text != "" && double.TryParse(txtExpenseAmount.Text, out x) && double.Parse(txtExpenseAmount.Text) >= 0)
             {
 
                 txtExpenseAmount.BorderBrush = new SolidColorBrush(Color.FromRgb(70, 70, 70));
                 approveTxtExpenseAmount = true;
             }
+            
             if (txtExpenseDate.Text != "")
             {
                 txtExpenseDate.BorderBrush = new SolidColorBrush(Color.FromRgb(70, 70, 70));
